@@ -1,0 +1,1 @@
+/usr/bin/c++ -Wl,--dependency-file=CMakeFiles/L2C.dir/link.d CMakeFiles/L2C.dir/src/main.cpp.o CMakeFiles/L2C.dir/src/student.cpp.o -o L2C
