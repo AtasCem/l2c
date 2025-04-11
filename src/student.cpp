@@ -1,19 +1,27 @@
 #include "student.h"
 
-// Konstruktor-Definition
-Student::Student(std::string par_name, int32_t par_id, int16_t par_bank_account_number)
-    : name(par_name), id_number(par_id), bank_account_number(par_bank_account_number) {}
-
-// Methode zum Aktualisieren der Bankkontonummer
-void Student::update_bank_account(int16_t new_bank_account_number)
+Student::Student(const std::string par_name, const int32_t par_id, const int64_t par_bank_account)
+    : name{par_name}, bank_account_{par_bank_account}
 {
-    bank_account_number = new_bank_account_number;
+    /*
+        Initialization can be done
+        1. directly in the declaration
+        2. in the initializer list of the constructor definition
+        3. in the constructor itself
+    */
+    id_number = par_id;
 }
-
-// Methode zum Ausgeben der Studentendaten
 void Student::print() const
 {
-    std::cout << "Name: " << name << "\n";
-    std::cout << "ID Number: " << id_number << "\n";
-    std::cout << "Bank Account Number: " << bank_account_number << "\n";
+    std::cout << "********** Student ************" << std::endl;
+    std::cout << "name: " << name << std::endl;
+    // we can use the "this" pointer to make the usage 100% clear
+    std::cout << "id: " << this->id_number << std::endl;
+    std::cout << "num of exams: " << num_of_exams << std::endl;
+    std::cout << "bank account: " << bank_account_ << std::endl;
+    std::cout << "*******************************" << std::endl;
+}
+void Student::update_bank_account(const int64_t par_bank_account)
+{
+    bank_account_ = par_bank_account;
 }
